@@ -1,0 +1,22 @@
+# Environment & System Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Dependencies & Build Outputs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python Runtime Artefacts
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+# Encrypted and temporary test files
+*.ransomwaretroll
+test.txt
+teste.txt
