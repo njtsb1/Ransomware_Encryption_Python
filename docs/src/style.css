@@ -1,0 +1,290 @@
+/* Color Variable Definitions (Dark Mode Default) */
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --border-color: #334155;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --danger-color: #ef4444;
+    --danger-hover: #dc2626;
+    --success-color: #10b981;
+    --success-hover: #059669;
+    --disabled-bg: #334155;
+    --disabled-text: #64748b;
+    --textarea-bg: #090d16;
+}
+
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --border-color: #cbd5e1;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger-color: #dc2626;
+    --danger-hover: #b91c1c;
+    --success-color: #059669;
+    --success-hover: #047857;
+    --disabled-bg: #e2e8f0;
+    --disabled-text: #94a3b8;
+    --textarea-bg: #f1f5f9;
+}
+
+/* Base Reset & Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Header Component */
+.header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+}
+
+.header-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#lang-select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.btn-theme {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+/* Main Card Container */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* File Upload & Input Area */
+.file-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#file-input {
+    display: none;
+}
+
+.btn-file {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-file:hover {
+    background-color: var(--primary-hover);
+}
+
+.file-name-display {
+    font-size: 0.85rem;
+    color: var(--disabled-text);
+}
+
+.key-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.key-container label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.key-container input {
+    padding: 0.65rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+/* Action Buttons */
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #ffffff;
+    transition: opacity 0.2s, background-color 0.2s;
+}
+
+.btn:disabled {
+    background-color: var(--disabled-bg) !important;
+    color: var(--disabled-text) !important;
+    cursor: not-allowed;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-danger:not(:disabled):hover {
+    background-color: var(--danger-hover);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-success:not(:disabled):hover {
+    background-color: var(--success-hover);
+}
+
+/* Status Banner */
+.status {
+    padding: 0.75rem;
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* File Content Inspector Styles */
+.inspector-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inspector-container label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+#file-inspector {
+    width: 100%;
+    height: 160px;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--textarea-bg);
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 0.9rem;
+    resize: vertical;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Footer Component */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--disabled-text);
+}
+
+/* Responsive Rules */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .actions {
+        flex-direction: column;
+    }
+}
