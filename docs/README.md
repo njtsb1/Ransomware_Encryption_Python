@@ -27,7 +27,17 @@ This project provides both a command-line interface (**Python**) and an interact
 3. Click **Encrypt File** to encrypt the content and automatically download `test.txt.ransomwaretroll`.
 4. Upload the encrypted file back to the browser and click **Decrypt File** to restore `test.txt`.
 
-![Encryption_Python](assets/Encryption_Python.png)
+Loaded file
+
+![Loaded file](assets/loaded_file.png)
+
+Encrypted file
+
+![Encrypted file](assets/encrypted_file.png)
+
+Decryptedfile
+
+![Decrypted_file](assets/decrypted_file.png)
 
 ## Disclaimer
 
