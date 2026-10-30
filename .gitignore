@@ -1,0 +1,11 @@
+# Encrypted or generated test text files
+*.ransomwaretroll
+test.txt
+test.txt
+
+# Python virtual environment and cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+environment/
