@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Ransomware Simulator</title>
+
+    <!-- Correct relative path to src/ folder if index.html is placed at the root -->
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- CryptoJS Libraries for AES-CTR Encryption -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/mode-ctr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/pad-nopadding.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 id="app-title">Educational Ransomware Simulator</h1>
+            <div class="controls">
+                <div class="lang-selector">
+                    <label for="lang-select" class="sr-only">Select Language</label>
+                    <select id="lang-select" aria-label="Select Language">
+                        <option value="en">English (US)</option>
+                        <option value="pt">Português (BR)</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <button id="theme-toggle" class="btn-theme" aria-label="Toggle dark/light theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="card">
+            <p id="app-desc" class="description">
+                Upload a .txt file to simulate encryption and decryption using AES-CTR mode.
+            </p>
+
+            <form id="ransomware-form" onsubmit="return false;">
+                <div class="file-input-wrapper">
+                    <input type="file" id="file-input" accept=".txt,.ransomwaretroll" aria-label="Upload file">
+                    <label for="file-input" id="file-label" class="btn-file">Choose File (.txt)</label>
+                    <span id="file-name" class="file-name-display">No file selected</span>
+                </div>
+
+                <div class="key-container">
+                    <label for="key-input" id="label-key">Secret Key (16 chars):</label>
+                    <input type="text" id="key-input" value="testeransomwares" maxlength="16" required>
+                </div>
+
+                <div class="actions">
+                    <button type="button" id="btn-encrypt" class="btn btn-danger" disabled>Encrypt File</button>
+                    <button type="button" id="btn-decrypt" class="btn btn-success" disabled>Decrypt File</button>
+                </div>
+            </form>
+
+            <div id="status-message" class="status" aria-live="polite">
+                Status: Ready
+            </div>
+
+            <!-- File Content Inspector Container -->
+            <div class="inspector-container">
+                <label for="file-inspector" id="label-inspector">File Content Inspector:</label>
+                <textarea id="file-inspector" readonly placeholder="Content of the loaded file will appear here..."></textarea>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p id="footer-text">Developed by Nivaldo Beirão</p>
+    </footer>
+
+    <!-- Correct relative path to script.js -->
+    <script src="src/script.js"></script>
+</body>
+</html>
