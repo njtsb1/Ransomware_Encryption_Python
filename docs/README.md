@@ -7,8 +7,8 @@ This project provides both a command-line interface (**Python**) and an interact
 ## Tecnologies used
 
 - **HTML5**: Complete single-file web application built with responsive design, accessibility standards (a11y), Dark/Light theme switching, and multi-language support (EN-US, PT-BR, ES).
-- **CSS3**:
-- **JavaScript**:
+- **CSS3**: Modern styling utilizing CSS custom properties (variables) for dynamic theming, Flexbox/Grid for responsive layouts across desktops, tablets, and smartphones, and custom UI components.
+- **JavaScript**: Client-side logic handling file reading/writing via the FileReader API, AES-CTR encryption and decryption routines using CryptoJS, dynamic language translation dictionaries, and state management for UI elements.
 
 ## Features (Web Interface)
 
